@@ -24,4 +24,5 @@ WHERE performer_name NOT LIKE '% %';
 SELECT track_name
 FROM test.track
 WHERE track_name LIKE '%мой%'
-	OR track_name LIKE '%my%';
+	OR track_name LIKE '%my%'
+	OR track_name LIKE '%Mein%';

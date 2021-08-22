@@ -5,6 +5,7 @@ ALTER TABLE test.album DISABLE TRIGGER ALL;
 ALTER TABLE test.performer_album DISABLE TRIGGER ALL;
 ALTER TABLE test.track DISABLE TRIGGER ALL;
 ALTER TABLE test.collection DISABLE TRIGGER ALL;
+ALTER TABLE test.track_collection DISABLE TRIGGER ALL;
 DELETE FROM test.performer;
 DELETE FROM test.genre;
 DELETE FROM test.performer_genre;
@@ -12,6 +13,7 @@ DELETE FROM test.album;
 DELETE FROM test.performer_album;
 DELETE FROM test.track;
 DELETE FROM test.collection;
+DELETE FROM test.track_collection;
 ALTER TABLE test.performer ENABLE TRIGGER ALL;
 ALTER TABLE test.genre ENABLE TRIGGER ALL;
 ALTER TABLE test.performer_genre ENABLE TRIGGER ALL;
@@ -19,13 +21,14 @@ ALTER TABLE test.album ENABLE TRIGGER ALL;
 ALTER TABLE test.performer_album ENABLE TRIGGER ALL;
 ALTER TABLE test.track ENABLE TRIGGER ALL;
 ALTER TABLE test.collection ENABLE TRIGGER ALL;
+ALTER TABLE test.track_collection ENABLE TRIGGER ALL;
 
 INSERT INTO test.performer
 	VALUES 
 		(1, 'Juli'),
 		(2, 'Rammstein'),
 		(3, 'Maneskin'),
-		(4, 'Emma Marone'),
+		(4, 'Emma Marrone'),
 		(5, 'Chopin'),
 		(6, 'Tchaikovsky'),
 		(7, 'Splin'),
@@ -78,7 +81,8 @@ INSERT INTO test.performer_album
 		(7, 7, 7),
 		(8, 8, 8),
 		(9, 9, 9),
-		(10, 10, 10);
+		(10, 10, 10),
+		(11, 10, 6);
 		
 INSERT INTO test.track
 	VALUES 
@@ -100,13 +104,28 @@ INSERT INTO test.track
 		
 INSERT INTO test.collection
 	VALUES 
-		(1, 'Es ist Juli', 2004),
-		(2, 'Mutter', 2001),
-		(3, 'Zitti e buoni', 2021),
-		(4, 'Essere Qui', 2018),
-		(5, 'Waltzes', 2010),
-		(6, 'The Nutcracker', 2020),
-		(7, 'Fellini', 2001),
-		(8, 'Vendetta', 2005),
-		(9, 'Nevermind', 1991),
-		(10, 'Bohemian Rhapsody', 2018);
+		(1, 'Juli_collection', 2004),
+		(2, 'Rammstein_collection', 2001),
+		(3, 'Maneskin_collection', 2021),
+		(4, 'Emma Marrone_collection', 2018),
+		(5, 'Chopin_collection', 2010),
+		(6, 'Tchaikovsky_collection', 2020),
+		(7, 'Splin_collection', 2001),
+		(8, 'Zemfira_collection', 2005),
+		(9, 'Nirvana_collection', 1991),
+		(10, 'Queen_collection', 2018);
+		
+INSERT INTO test.track_collection
+	VALUES 
+		(1, 1, 1),
+		(2, 2, 1),
+		(3, 3, 2),
+		(4, 4, 2),
+		(5, 5, 2),
+		(6, 6, 3),
+		(7, 10, 7),
+		(8, 11, 8),
+		(9, 12, 9),
+		(10, 13, 10),
+		(11, 14, 10),
+		(12, 15, 10);
